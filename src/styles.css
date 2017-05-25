@@ -1,0 +1,646 @@
+@import url('./animate.css');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Khula|Palanquin|Overpass+Mono:300,400,600,700');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Overpass Mono', monospace;
+}
+
+/*RESET BASIC STYLES*/
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 1em;
+}
+
+h3 {
+  margin: 20px 0px;
+}
+
+/*HOME PAGE STYLES*/
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.trigger-overlay {
+  /*display: none;*/
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity .3s;
+  background: rgba(0,0,0,.5);
+}
+.trigger-visible .trigger-overlay {
+  opacity: 1;
+}
+
+.home-logo {
+  animation: home-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.home-header {
+  position: relative;
+  white-space: nowrap;
+  padding: 50px;
+  flex: 0 1 auto;
+}
+.column1 {
+  display: inline-block;
+  width: 70%;
+  vertical-align: top;
+  cursor: pointer; 
+  cursor: hand;
+  /*background: yellow;*/
+}
+.column1 > h1 {
+  font-size: 50px;
+  line-height: 86%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Julius Sans One', sans-serif;
+}
+.column1 > h1 a  {
+  text-decoration: none;
+  color: black;
+}
+.column2 {
+  display: inline-block;
+  width: 20%;
+  min-width: 2px;
+  font-size: 11px;
+  vertical-align: top;
+ /* background: chartreuse;*/
+  text-align: center;
+}
+.contact-items {
+  display: inline-block;
+  text-align: left;
+}
+.contact-item > div {
+  display: inline-block;
+}
+.contact-item > div:nth-of-type(1) {
+  width: 75px;
+}
+.email-link a, .linkedin-link a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s all;
+}
+.email-link a:hover, .linkedin-link a:hover {
+  border-bottom: 1px solid gray;
+}
+/* HOME PAGE BIO */
+.introsection {
+  padding: 135px 20% 100px 20%;
+}
+
+.Typist {
+  font-size: 38px;
+  font-family: 'Overpass Mono', monospace;
+  font-weight: 700;
+  letter-spacing: -.09em
+
+}
+
+.Typist .Cursor {
+  display: inline-block; }
+  .Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink .7s linear infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.hello {
+  /*display: inline-block;*/
+  /*width: 20%;*/
+  /*border: 1px solid red;*/
+  font-size: 20px;
+  font-family:''Overpass Mono', monospace;', sans-serif;
+  letter-spacing: -.08em
+}
+.intro {
+  font-weight: 300;
+  font-size: 12px;
+  font-weight: thin;
+  padding-top: 15px;
+  line-height: 1;
+  color: #BCBCBC;
+  text-transform: uppercase;
+  letter-spacing: .09em
+}
+
+.home-intro {
+  font-family: 'Overpass Mono';
+  letter-spacing: -.06em;
+  font-weight: 200;
+  line-height: 24px;
+  font-size: 16px;
+  color: #BCBCBC;
+  /*background-color: blue; */
+  max-width: 900px;
+}
+
+.clientLink {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: gray !important;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  transition: 0.5s all;
+}
+
+.clientLink:hover {
+  border-bottom: 1px solid black;
+}
+
+/* RECENT & PAST WORK MENUS / SECTIONS */
+
+.recent {
+  padding-top: 15px; 
+}
+.recent > h3 {
+  font-weight: 300;
+  color: #BCBCBC;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+.recent > a {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 40px;
+  color: black;
+  font-weight: 800;
+  /*text-transform: uppercase;*/
+  font-family:'Overpass Mono', monospace;
+  letter-spacing: -.03em;
+}
+
+.past {
+  padding-top: 15px;
+
+}
+.past > h3 {
+  font-weight: 300;
+  color: #BCBCBC;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  transform: translate(px, 0px)
+}
+  
+.home.trigger-visible h1 > a {
+  color: white;
+}
+.home.trigger-visible .column2 {
+  color: white;
+}
+.gridlogo.trigger-visible img {
+  filter: invert(100%);
+}
+
+
+/*PRESENTATION (WORK)*/
+.displayzone {
+}
+
+.asset {
+  padding: 30px 10%;
+}
+.asset img {
+  max-width: 100%;
+}
+
+.asset video {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/*NAV STYLE*/
+.nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 15px 3% 15px 3%;
+  background: black;
+  color: white;
+  max-height: 80px;
+  transition: max-height .3s;
+  z-index: 999;
+}
+/* <... className='nav open' ...> */
+/* "dot notation" is different on stylesheets than in javascript,
+here it means "select the element that has BOTH these class names" */
+
+/*Nav Section*/
+
+.nav.open {
+  max-height: 500px;
+}
+
+.loginBox { 
+  font-family:'Overpass Mono', monospace;
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid #444;
+  transition: .1s border ease;
+  margin-right: 50px;
+}
+.loginBox:focus {
+  outline: none;
+  border-bottom-color: white;
+}
+
+.loginButton {
+   border: 1px solid white;
+   background: none;
+   padding: 5px 12px;
+   border-radius: 7px;
+   color: #ffffff;
+   font-size: 11px;
+   font-family:'Overpass Mono', monospace;
+   vertical-align: middle;
+}
+
+.loginButton:hover {
+  background: #F8F8FF;
+  color: black;
+}
+.loginButton:focus {
+  outline: none;
+}
+
+.loginClose {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  height: 25px;
+  width: 25px;
+}
+.loginClose .patty {
+  width: 100%;
+  height: 1px;
+  margin: 10px auto;
+  background: white;
+  transition: all 0.1s ease-out;
+}
+
+.loginClose.active .patty:first-of-type {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.loginClose.active .patty:last-of-type {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  margin-top: 16px;
+}
+
+
+.nav > h3 {
+  font-weight: 700;
+
+  color: grey;
+  margin: -5px 0px -8px 0px;
+  font-size: 16px;
+  font-family:'Overpass Mono', monospace;
+  /*border: 1px solid white;*/
+}
+.nav > p {
+  font-family:'Overpass Mono', monospace;
+  font-weight: 100; 
+  color: grey;
+  max-width: 60%;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 12px 0px 0px 0px;
+  line-height: 1.3;
+  
+}
+
+.navPanel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*border: 1px solid yellow;*/
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navPanel a {
+  color: #aaaaaa;
+  text-decoration: none;
+  padding: 0px 12px;
+
+}
+.homebutton {
+  padding-right: 2px !important;
+  margin-top: -2px;
+  font-size: 12px;
+  font-family:'Overpass Mono', monospace;
+  font-weight: 200;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.nextbutton {
+  font-family:'julius Sans One';
+  font-size: 23px;
+  font-weight: light;
+  margin-top: -2px;
+  display: flex;
+} 
+
+.previousbutton{
+  font-family:'julius Sans One';
+  font-size: 23px;
+  font-weight: 200;
+  margin-top: -2px;
+  display: flex;
+}
+
+@keyframes home-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.center-vertical {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 130px;
+}
+.grid {
+  width: 100%;
+}
+
+
+/*Grid logo styling*/
+
+.gridcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+.gridlogo {
+  width: 25%;
+  height: 140px;
+}
+.gridlogo > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.gridlogo > div > img {
+  min-width: 30px;
+  max-width: 70px;
+  width: 50%;
+  height: 50%;
+  filter: invert(0%);
+  transition: filter 250ms;
+}
+
+.message {
+  display:in-line block;
+  margin: 10px;
+}
+
+/* <a class='gridlogo nba'... */
+
+.gridlogo.nba img {
+  max-height: 70px;
+}
+
+.gridlogo.microsoft img {
+  max-height: 65px;
+}
+
+.gridlogo.paypal img {
+  min-width: 110px;
+}
+
+.gridlogo.googlemaps img {
+  min-width: 110px;
+}
+
+.gridlogo.ubisoft img {
+  min-width: 130px;
+}
+
+/*flex stuff*/
+
+/*trigger background assets*/
+.trigger-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /*opacity: .5;*/
+  z-index: -1;
+}
+.trigger-background > img {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.trigger-background > div {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+.trigger-background video {
+  min-height: 100%;
+}
+
+/*MEDIA QUERIES*/
+
+/*tablets*/
+@media screen and (max-width: 900px) {
+
+
+  .gridlogo {
+    width: 33.33%;
+  }
+
+  .column1,
+  .column2 {
+    width: 50%;
+
+  }
+
+  .introsection {
+  /*background-color: red;*/
+  padding: 135px 10% 0px 5%;
+  max-width: 750px;
+  margin-bottom: 5em;
+  }
+
+
+
+  .recent > h3 {
+  color: #BCBCBC;
+  font-size: px;
+  }
+
+  .recent > a {
+  font-size: 23px;
+  display: inline-block;
+  margin-right: 40px;
+  color: grey;
+  }
+
+  .gridlogo img {
+    max-width: 45px;
+  }
+
+  .gridlogo.adobe img {
+    width: 57px;
+  }
+
+  .gridlogo.womenstennisassociation img {
+    width: 66px;
+  }
+
+  .gridlogo.nba img {
+    width: 60px;
+  }
+
+  .gridlogo.microsoft img {
+    width: 48px;
+  }
+
+  .gridlogo.googlemaps img {
+    min-width: 85px !important;
+  }
+
+  .gridlogo.chanel img {
+    width: 55px;
+  }
+
+  .gridlogo.comcastxfinity img {
+    width: 83px;
+  }
+
+  .gridlogo.ea img {
+    width: 52px;
+  }
+
+  .gridlogo.ubisoft img {
+    min-width: 100px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  
+  .introsection {
+    padding: 100px 5% 0px 5%;
+
+  }
+
+  .gridlogo {
+    width: 33.33%;
+  }
+
+  .column1{
+    width:30%;
+  }
+
+  .column2{
+    width:10%;
+  }
+
+  .recent > a {
+  font-size: 20px;
+  display: inline-block;
+
+  padding: 8px 0px;
+  letter-spacing: -.03em;
+}
+
+.column1 {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  cursor: pointer; 
+  cursor: hand;
+  background: yellow;
+}
+.column1 > h1 {
+  font-size: 50px;
+  line-height: 86%;
+  position: absolute;
+  left: 20px;
+  padding: 0;
+  font-family: 'Julius Sans One', sans-serif;
+}
+.column1 > h1 a {
+  text-decoration: none;
+  color: black;
+}
+.column2 {
+  display: inline-block;
+  width: 20%;
+  min-width: 2px;
+  font-size: 11px;
+  vertical-align: top;
+ /* background: chartreuse;*/
+  text-align: center;
+}
+
+}
+ @media screen and (max-width: 350px) {
+  
+  .column1 {
+    display: inline-block;
+    width: 6%;
+    vertical-align: top;
+}
+}
+
+
+
+
+/*mobile*/
