@@ -2,121 +2,20 @@ import React, { Component } from 'react'
 import Typist from 'react-typist'
 
 import LogInBox from './LogInBox'
-
-function AccurateInterval (duration, callback) {
-  this.baseline = undefined
-  
-  this.run = () => {
-    if (this.baseline === undefined) {
-      this.baseline = new Date().getTime()
-    }
-    callback()
-
-    var end = new Date().getTime()
-    this.baseline += duration
- 
-    var nextTick = duration - (end - this.baseline)
-    if (nextTick < 0) {
-      nextTick = 0
-    }
-    ((i) => {
-        i.timer = setTimeout(() => {
-        i.run(end)
-      }, nextTick)
-    })(this)
-  }
-
-  this.stop = () => {
-    clearTimeout(this.timer)
-  }
-}
+import data from './data.js'
 
 class HomePage extends Component {
   constructor (props) {
     super (props)
 
-    var textTimeline = [
-      'H',
-      'He',
-      'Hel',
-      'Hell',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello.',
-      'Hello',
-      'Hell',
-      'Hel',
-      'He',
-      'H',
-      'H',
-      'H',
-      'H',
-      'H',
-      'Hi',
-      'Hi.',
-      'Hi.',
-      'Hi.',
-      'Hi.',
-      'Hi.',
-      'Hi.',
-      'Hi.',
-      'Hi!',
-      'Hi!',
-      'Hi!',
-      'Hi!',
-      'Hi!',
-      'Hi!!!!',
-      'Hi!!!!',
-      'Hi!!!!',
-      'Hi!!!!',
-      'Hi!!!!',
-      'Hi!!!!',
-      'Hi!!!!!!!!! MOM!!!!!',
-      'Hi!!!!!!!!! MOM!!!!!',
-      'Hi!!!!!!!!! MOM!!!!!',
-      'Hi!!!!!!!!! MOM!!!!!',
-      'Hi!!!!!!!!! MOM!!!!!',
-      'Hi!!!!!!!!! MOM!!!!!',
-    ]
-    var activeIndex = 0;
+    this.state = {}
 
-    setInterval(()=>{
-      activeIndex = activeIndex + 1
-      if(activeIndex >= textTimeline.length){
-        //loop it
-        activeIndex = 0
-      }
-      // console.log(textTimeline[activeIndex])
-      this.setState({currentGreeting: textTimeline[activeIndex]})
-      //instead of console.log, use React's setState — then in your function welcomeGreeeting, return this state instead of its current "choose a random language" logic
-    }, 100)
-
-    this.state = {
-      allTriggerAssets: this.getTriggerAssets(props.clients),
-      pastWorkVisible: false,
-      triggerIndex: 0,
-      startTriggerOn: 'adobe',
-      timerRunning: false,
-      readyToRenderTrigger: false,
-      width: null,
-      height: null,
-    }
-    console.log('initial state:', this.state)
-
-    this.restartTimer = this.restartTimer.bind(this)
     this.showPastWork = this.showPastWork.bind(this)
     this.hidePastWork = this.hidePastWork.bind(this)
     this.activateTrigger = this.activateTrigger.bind(this)
     this.deactivateTrigger = this.deactivateTrigger.bind(this)
     this.getWindowSize = this.getWindowSize.bind(this)
     this.getTriggerAssets = this.getTriggerAssets.bind(this)
-    this.getTriggerAssetDimensions = this.getTriggerAssetDimensions.bind(this)
     this.renderTrigger = this.renderTrigger.bind(this)
   }
 
@@ -125,56 +24,7 @@ class HomePage extends Component {
     // Now we can check things like how big the window is
     // console.log('componentDidMount')
     this.getWindowSize()
-    this.getTriggerAssetDimensions()
     window.addEventListener('resize', this.getWindowSize.bind(this))
-  }
-
-
-  restartTimer () {
-    // Start a timer that we'll eventually tap into to render the trigger images
-    // If there is no timer running yet, set a variable to indicate that it is NOW running
-
-    // Timer that updates the triggerIndex (position in allTriggerAssets)
-    // This starts at [0] and increases by 1 every XXX milliseconds,
-    // % means "modulo" (look it up)
-    // (this.state.triggerIndex + 1) % allTriggerAssets.length
-    // means that we always get a triggerIndex that we can use to find an image
-    
-    const timerSpeed = 220
-
-    // Restart timer
-    // New style timer
-    if (this.timer) {
-      this.timer.stop()
-    }
-
-    // Old style timer
-    // clearInterval(this.timer)
-
-    
-    // Hook up & run timer
-    // New style timer
-    var index = 0
-    const that = this
-    this.timer = new AccurateInterval(timerSpeed, () => {
-      index++
-      that.setState({
-        triggerIndex: index % that.state.allTriggerAssets.length
-      })
-    })
-    this.timer.run()
-
-    this.setState({
-      triggerIndex: 0,
-    })
-    
-    // // Old style timer
-    // this.timer = setInterval(() => {
-    //   index++
-    //   this.setState({
-    //     triggerIndex: index % this.state.allTriggerAssets.length
-    //   })
-    // }, timerSpeed)
   }
 
   componentWillUnmount() {
@@ -224,7 +74,7 @@ class HomePage extends Component {
     this.setState({
       width: window.innerWidth,
       height: window.innerHeight,
-    }, this.getTriggerAssetDimensions())
+    })
   }
 
   // The purpose of this function is to decide
@@ -342,48 +192,6 @@ class HomePage extends Component {
     return allTriggerAssets
   }
 
-  getTriggerAssetDimensions () {
-    // Loop through all the assets,
-    // load them,
-    // and record their height and width
-    //
-    // Ths uses the asset list to build an object which looks roughly like this:
-    // assetDimensions = {
-    //   'trig.1.crisis3.jpg': {
-    //     width: 1977,
-    //     height: 1310,
-    //   },
-    //   'trig.1.bp1.jpg' : {
-    //     width: 1811,
-    //     height: 1100,
-    //   }
-    // }
-
-    const assetDimensions = {}
-    this.state.allTriggerAssets.forEach(assetName => {
-      assetDimensions[assetName] = {}
-      var asset
-      if (assetName.includes('png') || assetName.includes('gif') || assetName.includes('jpg')) {
-        asset = new Image()
-      }
-      if (assetName.includes('mp4') || assetName.includes('mov')) {
-        asset = document.createElement('video')
-      }
-      asset.src = '../assets/' + assetName
-      asset.onload = () => {
-        const size = this.setImageSize(asset.naturalWidth, asset.naturalHeight)
-        assetDimensions[assetName] = {
-          width: size.width,
-          height: size.height,
-        }
-      }
-    })
-
-    this.setState({
-      assetDimensions: assetDimensions,
-      readyToRenderTrigger: true
-    })
-  }
 
   renderTrigger () {
     // Our timer is going to need to start on our starting client,
@@ -432,8 +240,8 @@ class HomePage extends Component {
         // Go through the current client's trigger assets,
         // and add them into the allTriggerAssets list
         const currentClientTriggerAssets = this.props.clients[clientName].trigger
-        currentClientTriggerAssets.forEach(assetName => {
-          allTriggerAssets.push(assetName)
+        currentClientTriggerAssets.forEach(square => {
+          allTriggerAssets.push(square)
         })
       }
     })
@@ -470,49 +278,11 @@ class HomePage extends Component {
 
     return (
       <div key={name} style={triggerStyle} className='trigger-background'>
-        {allTriggerAssets.map((assetName, i) => {
-          const width = this.state.assetDimensions[assetName].width
-          const height = this.state.assetDimensions[assetName].height
-          
-          // Normally, we style the asset as hidden
-          let assetStyle = {
-            visibility: 'hidden',
-          }
-          // If it's the "current" one in the triggerIndex, it’s briefly made visible
-          if (this.state.triggerVisible && i === this.state.triggerIndex) {
-            assetStyle = {
-              visibility: 'visible',
-            }
-          }
+        
 
-          if (assetName.includes('png') || assetName.includes('gif') || assetName.includes('jpg')) {
-            return (
-              <img
-                key={i}
-                style={assetStyle}
-                src={'../assets/' + assetName}
-                width={width}
-                height={height}
-                role='presentation'
-              />
-            )
-          }
-          if (assetName.includes('mp4') || assetName.includes('mov')) {
-            return (
-              <div
-                key={i}
-                style={assetStyle}>
-                <video autoPlay muted loop preload='auto' width={width} height={height}>
-                  <source src={'../../assets/' + assetName} />
-                </video>
-              </div>
-            )
-          }
-          else {
-            return null
-          }
-        })}
-        <div className='trigger-overlay'></div>
+
+
+
       </div>
     )
   }
@@ -524,16 +294,11 @@ class HomePage extends Component {
   // Objects (i.e. clients = {skully: {}, adobe: {}, microsoft: {}} cannot be)
   // so look on Google for questions like "how do I map over an object in JavaScript"
   render () {
+    console.log(data)
+
     var homeClassName = 'home'
     var gridClassName = 'pastworkgrid'
     var gridLogoClassName = 'gridlogo'
-
-
-    var welcomeGreeting = () => {
-      var greetingsList = ['Welcome', 'Yello', 'Ahoy!', 'Salut.']
-      var greetingChoice = Math.floor(Math.random()*4)
-      return greetingsList[greetingChoice]
-    }
     
     if (this.state.triggerVisible === true) {
       homeClassName = 'home trigger-visible'
@@ -544,131 +309,63 @@ class HomePage extends Component {
     return (
       <div className={homeClassName}>
         <section className='home-header'> 
-          <div onClick={() => this.hidePastWork()} className='column1'>
-            <h1>J</h1>
-          </div>
-
-          
-          <div className='column2'>
-            <div className='contact-items'>
-              <div className='contact-item'>
-                <div>email:</div>
-                <div className="email-link"><a href="mailto:jeff@thevisual.work">jeff@thevisual.work</a></div>
-              </div>
-            
-          
-             
-              <div className='contact-item'>
-                <div>linkedin:</div>
-                <div className="linkedin-link"><a href="https://www.linkedin.com/in/jeff-munar-65836419/?locale=en_US">linkedin.com/jeff-munar</a></div>
-              </div>
-            </div>
+          <div className='header-nav'>
+            <div className='column'>SHOP</div>
+            <div className='column'>CAMPAIGN</div>
+            <div className='column'>NICE LOGO</div>
+            <div className='column'>CULTURE</div>
+            <div className='column'>CONTACT</div>
           </div>
         </section>
 
-        {
-          this.state.pastWorkVisible === false &&
-            <section className='introsection'>
-              
-              
-              {this.state.currentGreeting}
-              <Typist 
-                stdTypingDelay={0}
-                cursor={{
-                  show: true,
-                  blink: true,
-                  element: '_',
-                  startDelay: 100,
-                }}>
-              </Typist>
-              
-              
-              <h3 className='intro animated fadeInDown'>Intro</h3>
+        <section className='modularsection'>
+          {data.squares.map((square, i) => {
+            
+            // At any given moment, you are just working with ONE item
+            // from data.squares
+            // {
+            //   kind: null,
+            //   media: 'file.jpg',
+            //   product: true,
+            //   wide: false,
+            // }
 
+            var className = 'modularbox'
+            if (square.wide == true) {
+              className = 'modularbox wide'
+            }
 
-              <p className='home-intro'>
-                I’m Jeff Munar, an independent creative specializing in brand
-                identity, art direction and design. I reside in San Francisco
-                where I’m currently making sense of pixels, garment pod systems
-                and digitizing the dandy.
-              </p>
-
-              <div className='recent'>
-                <h3 className='animated fadeInDown' >Recent Work</h3>
-                {
-                  Object.keys(this.props.clients).map((clientName, i) => {
-                    const currentClient = this.props.clients[clientName]
-                    // console.log('current client is:')
-                    // console.log(currentClient)
-
-                    if (currentClient.recent === true) {
-                      return (
-                        <a key={i} href={'/client/' + clientName} className='currentClientLink clientLink'>{currentClient.name}</a>
-                      )
-                    }
-                    // If it’s not recent, we still need to return something (.map requires that)
-                    // so we return <noscript /> which is a special way of saying,
-                    // return NOTHING
-                    return null
-                  })
-                }
-              </div>
-              
-              <div className='past animated fadeInDown'>
-                <h3>
-                  Past Clients
-                </h3>
-                <a href="/pastclients" className='clientLink'>View Client List</a>
-              </div>
-            </section>
-        }
-
-        {this.state.logInPrompt === true && <LogInBox onHidePastWork={this.hidePastWork} />}
-
-        {
-          this.state.pastWorkVisible === true &&
-            <section className={gridClassName}>
-              <div className='gridcontainer'>
-                {
-                  Object.keys(this.props.clients).map((clientName, i) => {
-                    const currentClient = this.props.clients[clientName]
-                    // console.log('current client is:')
-                    // console.log(currentClient)
-
-                    // currentClient = {
-                    //   name: 'Google Maps',
-                    //   description: 'Google Maps client description',
-                    //   recent: false,
-                    //   logo: 'wta.logo.svg',
-                    //   assets: [],
-                    // },
-
-                    // read about variables, loops, maps in javascript
-
-                    if (currentClient.recent === false) {
-                      return (
-                        <a className={gridLogoClassName + ' ' + clientName} key={i} onClick={() => this.showLogInPrompt(clientName)}> 
-                          <div>
-                            <img onMouseEnter={() => this.activateTrigger(clientName)} onMouseLeave={() => this.deactivateTrigger()} src={'../assets/' + currentClient.logo} role='presentation' />
-                          </div>
-                        </a>
-                      )
-                    }
-                    // If it’s not recent, we still need to return something (.map requires that)
-                    // so we return <noscript /> which is a special way of saying,
-                    // return NOTHING
-                    return null
-                  })
-                }
-              </div>
-              
-    
-            </section>
-          }
-
+            if (square.media.includes('png') || square.media.includes('gif') || square.media.includes('jpg')) {
+              return (
+                <img
+                  className={className}
+                  key={i}
+                  src={'../assets/' + square.media}
+                  role='presentation'
+                />
+              )
+            }
+            if (square.media.includes('mp4') || square.media.includes('mov')) {
+              return (
+                <div
+                  className={className}
+                  key={i}>
+                  <video autoPlay muted loop preload='auto'>
+                    <source src={'../../assets/' + square.media} />
+                  </video>
+                </div>
+              )
+            }
+            else {
+              return null
+            }
+          })}
+        </section>
       </div>
     )
   }
 }
+ 
+
 
 export default HomePage
