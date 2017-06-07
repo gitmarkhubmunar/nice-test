@@ -1,94 +1,209 @@
 const squares = [
 	{
-		media: 'NC-store-1.jpg',
+		media: 'store-1.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'Silver Metallic',
+		price: '$600',
+		sku: 'fc0291',
+	},
+
+	{
+		media: 'store-2.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: null,
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'model-1.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'Military Standard Jacket',
+		price: '$500',
+		sku: 'fc044',
+	},
+
+
+	{
+		media: 'plastiki-1.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'Plastiki Voyage',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'msu-1.jpg',
 		product: false,
 		kind: null,
 		wide: false,
 	},
 
+
 	{
-		media: 'NC-store-2.jpg',
+		media: 'linkin2.gif',
 		product: false,
 		kind: null,
 		wide: false,
+		title: 'LP Tee',
+		price: '$55',
+		sku: null,
 	},
 
-	{
-		media: 'NC-model-1.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-	},
 
 	{
-		media: 'NC-plastiki-1',
-		product: false,
-		kind: null,
-		wide: false,
-	},
-
-	{
-		media: 'NC-msu-1.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-	},
-
-	{
-		media: 'NC-linkin.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-	},
-
-	{
-		media: 'NC_para2.jpg',
+		media: 'para2.jpg',
 		product: false,
 		kind: null,
 		wide: true,
+		title: 'Deploy Drop',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'NC-store-3.jpg',
+		media: 'plastiki-1.jpg',
 		product: false,
 		kind: null,
-		wide: true,
+		wide: false,
+		title: 'Plastiki Voyage',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'NC-RonHerman.jpg',
+		media: 'store-3.jpg',
 		product: false,
 		kind: null,
-		wide: true,
+		wide: false,
+		title: 'Nice Progress',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'NC-sirens.jpg',
+		media: 'ronherman.jpg',
 		product: false,
 		kind: null,
-		wide: true,
+		wide: false,
+		title: 'Ron Herman',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'NC-cover.jpg',
+		media: 'sirens.jpg',
 		product: false,
 		kind: null,
-		wide: true,
+		wide: false,
+		title: 'sirens',
+		price: null,
+		sku: null,
 	},
 
 	{
 		media: 'unboxing.gif',
 		product: false,
 		kind: null,
-		wide: true,
+		wide: false,
+		title: 'radical unboxing',
+		price: null,
+		sku: null,
+	},
+
+		{
+		media: 'wallets.jpg',
+		product: true,
+		kind: 'accessory',
+		wide: false,
+		title: 'repurposed wallets',
+		price: '$300',
+		sku: 'nw9287',
+	},
+
+		{	
+		media: 'gridface.png',
+		product: false,
+		kind: null,
+		wide: false,
+		vertical: false,
+		title: 'collective faces',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'linkin2.gif',
+		media: 'drake.jpg',
 		product: false,
 		kind: null,
-		wide: true,
+		wide: false,
+		vertical: false,
+		title: 'Drake GQ',
+		price: null,
+		sku: null,
 	},
+
+
+	{
+		media: 'tagmake.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'documentation',
+		price: null,
+		sku: null,
+	},
+
+
+	{
+		media: 'bag1.jpg',
+		product: true,
+		kind: 'bag',
+		wide: false,
+		title: 'Drake GQ',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'aurora.jpeg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'Aurora Skies',
+		price: null,
+		sku: null,
+
+	},
+
+	{
+		media: 'satellite-cover.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'N.I.C.E.',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'wallet.jpg',
+		product: true,
+		kind: 'accessory',
+		wide: false,
+		title: 'Military Velvet',
+		price: '$430',
+		sku: 'wj1029',
+	},
+
 
 	{
 		media: 'linkin3.gif',
@@ -97,46 +212,14 @@ const squares = [
 		wide: true,
 	},
 
-	{
-		media: 'tagmake.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-	},
-
-	{
-		media: 'tagmake2.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-	},
-
-	{
-		media: 'NC-bag1.jpg',
+		{
+		media: 'coatedbomberjacketflight.jpg',
 		product: true,
-		kind: 'bag',
+		kind: 'jacket',
 		wide: false,
-	},
-
-	{
-		media: 'NC-wallets.jpg',
-		product: true,
-		kind: 'accessory',
-		wide: false,
-	},
-
-	{
-		media: 'aurora.jpeg',
-		product: false,
-		kind: null,
-		wide: false,
-	},
-
-	{
-		media: 'NC-wallet.jpg',
-		product: true,
-		kind: 'accessory',
-		wide: false,
+		title: 'Coated Bomber Flight',
+		price: '$810',
+		sku: 'nu1001',
 	},
 
 	{
@@ -144,13 +227,19 @@ const squares = [
 		product: true,
 		kind: 'jacket',
 		wide: false,
+		title: 'Colette Jacket',
+		price: '$900',
+		sku: 'nu1201',
 	},
 
 	{
-		media: 'coatedbomberjacketflight.jpg',
-		product: true,
-		kind: 'jacket',
+		media: 'tagmake2.jpg',
+		product: false,
+		kind: null,
 		wide: false,
+		title: 'documentation 2',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -158,13 +247,19 @@ const squares = [
 		product: true,
 		kind: 'jacket',
 		wide: false,
+		title: 'Mission Trench',
+		price: '$1100',
+		sku: 'nu1201',
 	},
 
 	{
-		media: 'NC-jacket1.jpg',
+		media: 'jacket1.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
+		title: 'Standard Military',
+		price: '$700',
+		sku: 'iu1881',
 	},
 
 	{
@@ -172,6 +267,9 @@ const squares = [
 		product: true,
 		kind: 'jacket',
 		wide: false,
+		title: 'Moto Tri Jacket',
+		price: '$720',
+		sku: 'sf1829',
 	},
 
 	{
@@ -179,28 +277,31 @@ const squares = [
 		product: true,
 		kind: 'jacket',
 		wide: false,
+		title: 'Camel Mission Trench',
+		price: '$1100',
+		sku: 'sh1829',
 	},
 
-	{
-		media: 'jacket-006.jpg',
-		product: true,
-		kind: 'jacket',
-		wide: false,
-	},
 
 	{
 		media: 'jacket-003.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
+		title: 'Leather Moto 2',
+		price: '$1100',
+		sku: 'sh1829',
 	},
 
 	{
-		media: 'NIN2.jpg',
+		media: 'nin2.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: true
+		vertical: true,
+		title: 'NIN',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -208,7 +309,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'kanye',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -216,23 +320,22 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: true,
-		vertical: false
+		vertical: false,
+		title: 'Paratrooper',
+		price: null,
+		sku: null,
 	},
 
+
 	{
-		media: 'drake.jpg',
+		media: 'floor.layout.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
-	},
-
-	{
-		media: 'NC-floor.layout.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Floor layout',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -240,7 +343,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'starburst shoot',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -248,7 +354,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Outlier campaign',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -256,15 +365,21 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'ramp',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'surveillance Installation.jpg',
+		media: 'surveillance.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'surveillance stream',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -272,40 +387,54 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'surveillance stream',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'Nice_Collective_LA.jpg',
+		media: 'store_la.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'LA Pop Up',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'Nice_Collective_LA2.jpg',
+		media: 'store_la2.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'LA Pop Up 2',
+		price: null,
+		sku: null,
 	},
 
 
 	{
-		media: 'Nice_Collective_LA3.jpg',
+		media: 'la3.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'LA Pop Up 3',
+		price: null,
+		sku: null,
 	},
 
 	{
-		media: 'NC-hat1.jpg',
+		media: 'hat1.jpg',
 		product: true,
 		kind: null,
 		wide: false,
-		vertical: false
+		title: 'slack hat',
+		price: '$150',
+		sku: null,
 	},
 
 	{
@@ -317,11 +446,14 @@ const squares = [
 	},
 
 	{
-		media: 'NC-boots.jpg',
+		media: 'boots.jpg',
 		product: true,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Standard Boot',
+		price: '$800',
+		sku: null,
 	},
 
 	{
@@ -329,7 +461,10 @@ const squares = [
 		product: true,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'slack hat',
+		price: '$150',
+		sku: null,
 	},
 
 	{
@@ -345,7 +480,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Radar Logo',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -353,7 +491,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: "Radar Logo",
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -361,7 +502,20 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: "Oh, Joe",
+		price: null,
+		sku: null,
+	},
+
+		{
+		media: 'linkinp.jpg',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'LP Music Video',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -369,7 +523,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Old School',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -377,7 +534,11 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Ian on the Plastiki',
+		price: null,
+		sku: null,
+
 	},
 
 	{
@@ -385,7 +546,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Pillow Phases',
+		price: '$80',
+		sku: null,
 	},
 
 	{
@@ -393,7 +557,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'ooo swatches',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -401,7 +568,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Surveillance 3',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -409,15 +579,23 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Expedition Interior',
+		price: null,
+		sku: null,
 	},
+
 
 	{
 		media: 'gq.designers.jpg',
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'GQ Designers',
+		price: null,
+		sku: null,
+
 	},
 
 	{	
@@ -425,7 +603,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Radar',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -433,7 +614,10 @@ const squares = [
 		product: true,
 		kind: 'shirt',
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'OG Tee',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -441,7 +625,11 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Draw String',
+		price: null,
+		sku: null,
+
 	},
 
 	{	
@@ -449,7 +637,11 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Draw String',
+		price: null,
+		sku: null,
+
 	},
 
 	{	
@@ -457,7 +649,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Bon Voyage, SF',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -465,7 +660,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Surveillance 3',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -473,7 +671,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Bass Nectar',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -481,7 +682,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Plastiki Uniform',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -489,7 +693,10 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Surveillance 4',
+		price: null,
+		sku: null,
 	},
 
 	{	
@@ -497,21 +704,16 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		vertical: false
+		vertical: false,
+		title: 'Bird Song',
+		price: null,
+		sku: null,
 	},
 
 	{	
 		media: 'lesoleil.png',
 		product: false,
-		kind: null,
-		wide: false,
-		vertical: false
-	},
-
-	{	
-		media: 'lesoleil.png',
-		product: false,
-		kind: null,
+		kind: 'music',
 		wide: false,
 		vertical: false
 	},
@@ -519,15 +721,7 @@ const squares = [
 	{	
 		media: 'album1.png',
 		product: false,
-		kind: null,
-		wide: false,
-		vertical: false
-	},
-
-	{	
-		media: 'album1.png',
-		product: false,
-		kind: null,
+		kind: 'music',
 		wide: false,
 		vertical: false
 	},
@@ -535,31 +729,16 @@ const squares = [
 	{	
 		media: 'nasa.png',
 		product: false,
-		kind: null,
+		kind: 'music',
 		wide: false,
 		vertical: false
 	},
 
-	{	
-		media: 'gridface.png',
-		product: false,
-		kind: null,
-		wide: false,
-		vertical: false
-	},
 
 	{	
 		media: 'coldplay.png',
 		product: false,
-		kind: null,
-		wide: false,
-		vertical: false
-	},
-
-	{	
-		media: 'coldplay.png',
-		product: false,
-		kind: null,
+		kind: 'music',
 		wide: false,
 		vertical: false
 	},
@@ -575,7 +754,6 @@ export default {
 	squares,
 	address,
 }
-
 
 // In React components, you can:
 

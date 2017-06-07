@@ -1,10 +1,14 @@
 @import url('./animate.css');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Khula|Palanquin|Overpass+Mono:300,400,600,700');
+@font-face {
+    font-family: FranklinGothic;
+    src: url("../public/fonts/FranklinGothicCondensed.otf") format("opentype");
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Overpass Mono', monospace;
+  font-family: 'FranklinGothic', 'Overpass Mono', monospace;
 }
 
 /*RESET BASIC STYLES*/
@@ -32,10 +36,13 @@ h3 {
 }
 
 .home-header {
-  padding: 30px;
+  padding: 27px;
   background: blue;
   border: 1px solid red;
-  padding: 30px 20px;
+  background-image: url('../public/assets/single-gridline.svg');
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  /*background-position: 0  ;*/
 }
 
 .header-nav {
@@ -57,14 +64,36 @@ h3 {
 
 .modularbox {
   background: yellow;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 25vw;
   height: 25vw;
 }
 
 .modularbox.wide{
-  background: red;
+  background-color: red;
   width: 50vw;
 }
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  background-image: url('../public/assets/single-gridline.svg');
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  transition: max-height .4s ease;
+
+}
+
+.column:hover {
+  color: black;
+}
+.column:hover > .menu {
+  max-height: 2000px;
+}
+
 
 
 
@@ -84,18 +113,8 @@ h3 {
 }
 
 .Typist .Cursor {
-  display: inline-block; }
-  .Typist .Cursor--blinking {
-    opacity: 1;
-    animation: blink .7s linear infinite; }
-
-@keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  display: inline-block;
+}
 
 .hello {
   /*display: inline-block;*/
