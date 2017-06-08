@@ -14,14 +14,14 @@ const squares = [
 		product: false,
 		kind: null,
 		wide: false,
-		title: null,
+		title: 'LA pop up',
 		price: null,
 		sku: null,
 	},
 
 	{
 		media: 'model-1.jpg',
-		product: false,
+		product: true,
 		kind: null,
 		wide: false,
 		title: 'Military Standard Jacket',
@@ -55,7 +55,7 @@ const squares = [
 		wide: false,
 		title: 'LP Tee',
 		price: '$55',
-		sku: null,
+		sku: 'ki0191',
 	},
 
 

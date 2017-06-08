@@ -1,5 +1,5 @@
 @import url('./animate.css');
-@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Khula|Palanquin|Overpass+Mono:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Khula|Inconsolata|Palanquin|Overpass+Mono:300,400,600,700');
 @font-face {
     font-family: FranklinGothic;
     src: url("../public/fonts/FranklinGothicCondensed.otf") format("opentype");
@@ -38,7 +38,6 @@ h3 {
 .home-header {
   padding: 27px;
   background: blue;
-  border: 1px solid red;
   background-image: url('../public/assets/single-gridline.svg');
   background-size: 20px 20px;
   background-repeat: repeat;
@@ -47,13 +46,16 @@ h3 {
 
 .header-nav {
   display: flex;
-  
+  font-size: 22px;
+  color: black;
+  letter-spacing: 1px;
   justify-content: space-around;
 }
 
 .column {
   border: 1px solid red;
   width: 250px;
+
 }
 
 .modularsection {
@@ -69,6 +71,114 @@ h3 {
   background-repeat: no-repeat;
   width: 25vw;
   height: 25vw;
+  position: relative;
+}
+
+.modularbox:hover > .modularinset {
+  display: block;
+}
+
+.modularinset {
+  /*height: 40%;*/
+  width: 100%;
+  background: red;
+  display: none;
+  position: absolute;
+  bottom: 0;
+}
+
+/*.modularinset > div {
+  display: flex;
+  border: solid 1px white;
+  background: yellow;
+}*/
+
+.pinbottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.insetinfo,
+.insetbuttons {
+  display: flex;
+  flex-wrap: nowrap;
+  /*background: pink;*/
+  background-image: url('../public/assets/single-gridline.svg');
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+.insetinfo {
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 5px;
+  min-height: 50px;
+  width: 100%;
+}
+
+.titletext {
+  font-size: 30px;
+  color: black;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 88%;
+}
+
+.title {
+  flex: 0 0 66.66%;
+}
+
+.pricesku {
+  position: relative;
+  flex: 0 0 33.33%;
+}
+
+.pricing {
+  font-size: 30px;
+  color: red;
+  font-family: 'FranklinGothic';
+}
+
+.sku {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -17px;
+  font-size: 12px;
+  color: grey;
+  font-family: 'Inconsolata', monospace;
+}
+
+.insetbuttons {
+  height: 35px;
+}
+
+.insetbuttons > div {
+  flex-grow: 1;
+  width: 33.33%;
+  max-width: 100%;
+  font-family: 'Inconsolata', monospace;
+  color: white;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.sharebutton {
+  background-color: #4a4948;
+}
+
+.buybutton {
+  background-color: #949598;
+}
+
+.bagbutton {
+  background-color: #d2d4d5;
 }
 
 .modularbox.wide{
@@ -97,7 +207,6 @@ h3 {
 
 
 
-
 /* HOME PAGE BIO */
 /*.introsection {
   padding: 135px 20% 100px 20%;
@@ -105,7 +214,7 @@ h3 {
 
 
 .Typist {
-  font-size: 38px;
+  font-size: 3  8px;
   font-family: 'Overpass Mono', monospace;
   font-weight: 700;
   letter-spacing: -.09em
@@ -141,30 +250,28 @@ h3 {
 
 
 @media screen and (max-width: 500px) {
-  
   .introsection {
     padding: 100px 5% 0px 5%;
-
   }
 
   .gridlogo {
     width: 33.33%;
   }
 
-  .column1{
-    width:30%;
+  .column1 {
+    width: 30%;
   }
 
-  .column2{
-    width:10%;
+  .column2 {
+    width: 10%;
   }
 
   .recent > a {
-  font-size: 20px;
-  display: inline-block;
-
-  padding: 8px 0px;
-  letter-spacing: -.03em;
+    font-size: 20px;
+    display: inline-block;
+    padding: 8px 0px;
+    letter-spacing: -.03em;
+  }
 }
 
 .column1 {
@@ -197,14 +304,14 @@ h3 {
   text-align: center;
 }
 
-}
- @media screen and (max-width: 350px) {
-  
+
+
+@media screen and (max-width: 350px) {
   .column1 {
     display: inline-block;
     width: 6%;
     vertical-align: top;
-}
+  }
 }
 
 

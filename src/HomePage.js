@@ -56,7 +56,7 @@ class HomePage extends Component {
               </div>
             </div>
             <div className='column'>CAMPAIGN</div>
-            <div onClick={(category) => this.changeFilter(null)} className='column'>NICE RESET</div>
+            <div onClick={(category) => this.changeFilter(null)} className='column'style={{backgroundImage: 'url(../assets/nicecollective.logo.svg)'}}>NICE RESET</div>
             <div className='column'>CULTURE
               <div className='menu'>
                 <div>COLLECTIVE</div>
@@ -105,11 +105,29 @@ class HomePage extends Component {
                 <div
                   className={className}
                   key={i}
-                  style={{
-                    backgroundImage: 'url(../assets/' + square.media + ')'
-                  }}
+                  style={{backgroundImage: 'url(../assets/' + square.media + ')'}}
                   role='presentation'>
-                    {square.media} {square.wide ? 'wide == true' : 'wide == false'}
+                    <div className='modularinset'>
+                      <div className='pinbottom'>
+                        <div className='insetinfo'>
+                          <div className='title'>
+                            <div className='titletext'>{square.title}</div>
+                          </div>
+                          <div className='pricesku'>
+                            <div className='sku'>{square.sku}</div>
+                            <div className='pricing'>
+                              <div className='titletext'>{square.price}</div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='insetbuttons'>
+                          <div className='sharebutton'>SHARE</div>
+                          {square.product == true && <div className='buybutton'>BUY</div>}
+                          {square.product == true && <div className='bagbutton'>BAG</div>}
+                        </div>
+                      </div>
+                    </div>
                 </div>
               )
             }
@@ -122,6 +140,7 @@ class HomePage extends Component {
                   <video autoPlay muted loop preload='auto'>
                     <source src={'../assets/' + square.media} />
                   </video>
+                  PUT MODULAR INSET DIV HERE WHEN FINISHED_ selectors and hover states (CSS)
                 </div>
               )
             }
