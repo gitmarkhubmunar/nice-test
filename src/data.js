@@ -47,9 +47,8 @@ const squares = [
 		wide: false,
 	},
 
-
 	{
-		media: 'linkin2.gif',
+		media: 'clips.chester.skull.mp4',
 		product: false,
 		kind: null,
 		wide: false,
@@ -57,7 +56,6 @@ const squares = [
 		price: '$55',
 		sku: 'ki0191',
 	},
-
 
 	{
 		media: 'para2.jpg',
@@ -70,11 +68,11 @@ const squares = [
 	},
 
 	{
-		media: 'plastiki-1.jpg',
+		media: 'clips.watch.mp4',
 		product: false,
 		kind: null,
 		wide: false,
-		title: 'Plastiki Voyage',
+		title: 'bleeding',
 		price: null,
 		sku: null,
 	},
@@ -129,6 +127,36 @@ const squares = [
 		sku: 'nw9287',
 	},
 
+	{
+		media: 'clips.joe.flashing.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'joe strobe',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'clips.redsquare.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'red wedding',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'clips.landscapes.mp4',
+		product: false,
+		kind: null,
+		wide: true,
+		title: 'Landscapes',
+		price: null,
+		sku: null,
+	},
+
 		{	
 		media: 'gridface.png',
 		product: false,
@@ -168,7 +196,17 @@ const squares = [
 		product: true,
 		kind: 'bag',
 		wide: false,
-		title: 'Drake GQ',
+		title: 'Marshall Bag',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'clips.shit.unravel.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'bleeding',
 		price: null,
 		sku: null,
 	},
@@ -212,24 +250,54 @@ const squares = [
 		wide: true,
 	},
 
-		{
-		media: 'coatedbomberjacketflight.jpg',
+	{
+		media: 'jacket.systemleather.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
-		title: 'Coated Bomber Flight',
+		title: 'System Leather Jacket',
 		price: '$810',
 		sku: 'nu1001',
 	},
 
 	{
-		media: 'colettejacketsolo.jpg',
+		media: 'colettejacketa.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
 		title: 'Colette Jacket',
 		price: '$900',
 		sku: 'nu1201',
+	},
+
+		{
+		media: 'clips.lights.square.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'joe strobe',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'seacoat.jpg',
+		product: true,
+		kind: 'jacket',
+		wide: false,
+		title: 'Wool Sea Coat',
+		price: '$550',
+		sku: 'iy2899',
+	},
+
+	{
+		media: 'clips.parachute.mp4',
+		product: false,
+		kind: null,
+		wide: true,
+		title: 'chutes',
+		price: null,
+		sku: null,
 	},
 
 	{
@@ -242,28 +310,29 @@ const squares = [
 		sku: null,
 	},
 
-	{
-		media: 'missiontrench.jpg',
-		product: true,
-		kind: 'jacket',
-		wide: false,
-		title: 'Mission Trench',
-		price: '$1100',
-		sku: 'nu1201',
-	},
 
 	{
-		media: 'jacket1.jpg',
+		media: 'battalian.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
-		title: 'Standard Military',
+		title: 'Battalian Jacket',
 		price: '$700',
 		sku: 'iu1881',
 	},
 
 	{
-		media: 'jacket002.jpg',
+		media: 'hybrid.jacket.jpg',
+		product: true,
+		kind: 'jacket',
+		wide: false,
+		title: 'Hybrid',
+		price: '$700',
+		sku: 'iu1881',
+	},
+
+	{
+		media: 'jacket002a.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
@@ -273,7 +342,29 @@ const squares = [
 	},
 
 	{
-		media: 'jacket001.jpg',
+		media: 'jacket.silverplatoon.jpg',
+		product: true,
+		kind: 'jacket',
+		wide: false,
+		title: 'Silver Coated Argonaut',
+		price: '$910',
+		sku: 'nu1001',
+	},
+
+
+	{
+		media: 'plastiki.pillow.jpg',
+		product: false,
+		kind: null,
+		wide: true,
+		vertical: false,
+		title: 'Pillow Phases',
+		price: '$80',
+		sku: null,
+	},
+
+	{
+		media: 'jacket001a.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
@@ -282,9 +373,20 @@ const squares = [
 		sku: 'sh1829',
 	},
 
+	{	
+		media: 'shirt.circlebolttblack.jpg',
+		product: true,
+		kind: 'shirt',
+		wide: false,
+		vertical: false,
+		title: 'OG Tee',
+		price:'$85',
+		sku: 's091h19',
+	},
+
 
 	{
-		media: 'jacket-003.jpg',
+		media: 'leather.moto.jpg',
 		product: true,
 		kind: 'jacket',
 		wide: false,
@@ -324,6 +426,16 @@ const squares = [
 		title: 'Paratrooper',
 		price: null,
 		sku: null,
+	},
+
+	{
+		media: 'jacket.moleskinnightcrawler.jpg',
+		product: true,
+		kind: 'jacket',
+		wide: false,
+		title: 'Moleskin Night Crawler',
+		price: '$810',
+		sku: 'nu1001',
 	},
 
 
@@ -371,6 +483,18 @@ const squares = [
 		sku: null,
 	},
 
+	{	
+		media: 'shirt.circlebolttwhite.jpg',
+		product: true,
+		kind: 'shirt',
+		wide: false,
+		vertical: false,
+		title: 'Circle Bolt T White',
+		price:'$70',
+		sku: 'gh1709',
+	},
+
+
 	{
 		media: 'surveillance.jpg',
 		product: false,
@@ -380,6 +504,17 @@ const squares = [
 		title: 'surveillance stream',
 		price: null,
 		sku: null,
+	},
+
+	{	
+		media: 'shirt.dogtagt.jpg',
+		product: true,
+		kind: 'shirt',
+		wide: false,
+		vertical: false,
+		title: 'DogTag T',
+		price:'$70',
+		sku: 'gu8609',
 	},
 
 	{
@@ -394,6 +529,37 @@ const squares = [
 	},
 
 	{
+		media: 'clips.astronautica.mp4',
+		product: false,
+		kind: null,
+		wide: true,
+		title: 'astronautica',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'terrarium.jpg',
+		product: false,
+		kind: null,
+		wide: true,
+		vertical: false,
+		title: 'Paratrooper',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'codedwindbreaker.jpg',
+		product: true,
+		kind: 'jacket',
+		wide: false,
+		title: 'Coated Bomber Flight',
+		price: '$810',
+		sku: 'nu1001',
+	},
+
+	{
 		media: 'store_la.jpg',
 		product: false,
 		kind: null,
@@ -405,12 +571,32 @@ const squares = [
 	},
 
 	{
+		media: 'clips.ink.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'bleeding',
+		price: null,
+		sku: null,
+	},
+
+	{
 		media: 'store_la2.jpg',
 		product: false,
 		kind: null,
 		wide: false,
 		vertical: false,
 		title: 'LA Pop Up 2',
+		price: null,
+		sku: null,
+	},
+
+	{
+		media: 'clips.moon.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'Orbit',
 		price: null,
 		sku: null,
 	},
@@ -475,6 +661,26 @@ const squares = [
 		vertical: false
 	},
 
+		{
+		media: 'clips.chester.scream.mp4',
+		product: false,
+		kind: null,
+		wide: false,
+		title: 'LP Tee',
+		price: '$55',
+		sku: 'ki0191',
+	},
+
+	{
+		media: 'clips.dogtag.mp4',
+		product: false,
+		kind: null,
+		wide: true,
+		title: 'DogPatch // DogTag',
+		price: null,
+		sku: null,
+	},
+
 	{
 		media: 'radarlogo.black.jpg',
 		product: false,
@@ -485,6 +691,18 @@ const squares = [
 		price: null,
 		sku: null,
 	},
+
+	{
+		media: 'jacket.camo.jpg',
+		product: true,
+		kind: 'jacket',
+		wide: false,
+		title: 'Wool Sea Coat',
+		price: '$550',
+		sku: 'iy2899',
+	},
+
+
 
 	{
 		media: 'nc-surv2.jpg',
@@ -508,15 +726,14 @@ const squares = [
 		sku: null,
 	},
 
-		{
-		media: 'linkinp.jpg',
+	{	
+		media: 'coldplay.png',
 		product: false,
-		kind: null,
+		kind: 'music',
 		wide: false,
-		title: 'LP Music Video',
-		price: null,
-		sku: null,
+		vertical: false
 	},
+
 
 	{
 		media: 'oldschool.jpg',
@@ -541,16 +758,6 @@ const squares = [
 
 	},
 
-	{
-		media: 'plastiki.pillow.jpg',
-		product: false,
-		kind: null,
-		wide: false,
-		vertical: false,
-		title: 'Pillow Phases',
-		price: '$80',
-		sku: null,
-	},
 
 	{
 		media: 'gryswtch.jpg',
@@ -616,7 +823,7 @@ const squares = [
 		wide: false,
 		vertical: false,
 		title: 'OG Tee',
-		price: null,
+		price:'$85',
 		sku: null,
 	},
 
@@ -735,13 +942,6 @@ const squares = [
 	},
 
 
-	{	
-		media: 'coldplay.png',
-		product: false,
-		kind: 'music',
-		wide: false,
-		vertical: false
-	},
 
 ]
 

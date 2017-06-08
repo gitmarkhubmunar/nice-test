@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import HomePage from './HomePage'
 import ClientPage from './ClientPage'
-import PastClientsPage from './PastClientsPage'
+import Product from './Product'
 
 // Render our custom home page component
 const renderHomePage = (props) => {
@@ -23,9 +23,9 @@ const renderClientPage = (props) => {
 	)
 }
 
-const renderPastClientsPage = (props) => {
+const renderProduct = (props) => {
   return (
-    <PastClientsPage
+    <Product
       {...props}
     />
   )
@@ -36,8 +36,8 @@ const Routes = (props) => {
 	  <Router {...props}>
 	  	<div>
 	  		<Route exact path='/' render={renderHomePage} />
-		    <Route path='/client/:name' render={renderClientPage} />
-        <Route path='/pastclients' render={renderPastClientsPage} />
+		    <Route path='/client/:name' render={renderProduct} />
+        <Route path='/product' render={renderProduct} />
 		    {/*<Route path='*' component={NotFound} />*/}
 		  </div>
 	  </Router>

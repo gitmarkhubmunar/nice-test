@@ -13,6 +13,7 @@ class HomePage extends Component {
     }
 
     this.changeFilter = this.changeFilter.bind(this)
+    this.renderModularInset = this.renderModularInset.bind(this)
   }
 
   // Set a filter category in state, which will be used
@@ -23,6 +24,31 @@ class HomePage extends Component {
     })
   }
 
+  renderModularInset (square) {
+    return (
+      <div className='modularinset'>
+        <div className='pinbottom'>
+          <div className='insetinfo'>
+            <div className='title'>
+              <div className='titletext'>{square.title}</div>
+            </div>
+            <div className='pricesku'>
+              <div className='sku'>{square.sku}</div>
+              <div className='pricing'>
+                <div className='titletext'>{square.price}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className='insetbuttons'>
+            <div className='sharebutton'>SHARE</div>
+            {square.product == true && <div className='buybutton'>BUY</div>}
+            {square.product == true && <div className='bagbutton'>BAG</div>}
+          </div>
+        </div>
+      </div>
+    )
+  }
   render () {
     console.log('filter is', this.state.filter)
 
@@ -55,16 +81,38 @@ class HomePage extends Component {
                 <div onClick={(category) => this.changeFilter('accessory')}>ACCESSORIES</div>
               </div>
             </div>
-            <div className='column'>CAMPAIGN</div>
-            <div onClick={(category) => this.changeFilter(null)} className='column'style={{backgroundImage: 'url(../assets/nicecollective.logo.svg)'}}>NICE RESET</div>
-            <div className='column'>CULTURE
+            <div className='column'>CAMPAIGN
+             <div className='menu'>
+                <div>AIR JUMP</div>
+                <div>PYRAMID LAKE</div>
+                <div>3x3</div>
+            </div>
+
+            </div>
+            <div onClick={(category) => this.changeFilter(null)} className='column logo'></div>
+            <div className='column'>
+            CULTURE
               <div className='menu'>
-                <div>COLLECTIVE</div>
-                <div>PLASTIKI</div>
-                <div>N.I.C.E. FUTURE</div>
+                <div>SOCIAL MEDIA</div>
+                <div>EVENTS</div>
+                <div>CURRENT PRESS</div>
+                <div>CURRENT PROCESS</div>
+                <div>PAST VIDEOS</div>
+                <div>PAST LOOKBOOKS</div>
+                <div>PAST EDITORIAL</div>
+                <div>PAST ARTICLES</div>
+                <div>ARCHIVAL PIECES</div>
+                <div>PAST PROCESSES</div>
+                <div>N.I.C.E. INSPIRATION</div>
             </div>
               </div>
             <div className='column'>CONTACT
+              <div className='menu'>
+                <div>APPOINTMENTS</div>
+                <div>SHOP HOURS</div>
+                <div>SF DOGPATCH</div>
+            </div>
+
               </div>
             </div>
         </section>
@@ -77,8 +125,6 @@ class HomePage extends Component {
                 return
               }
             }
-
-
             
             // At any given moment, you are just working with ONE item
             // from data.squares
@@ -94,12 +140,6 @@ class HomePage extends Component {
               className = 'modularbox wide'
             }
 
-            // var name = 'jeff'
-            // want this string: (hello jeff)
-
-            // '(hello ' + name + ')'
-            //  (hello     jeff    )
-
             if (square.media.includes('png') || square.media.includes('gif') || square.media.includes('jpg')) {
               return (
                 <div
@@ -107,27 +147,7 @@ class HomePage extends Component {
                   key={i}
                   style={{backgroundImage: 'url(../assets/' + square.media + ')'}}
                   role='presentation'>
-                    <div className='modularinset'>
-                      <div className='pinbottom'>
-                        <div className='insetinfo'>
-                          <div className='title'>
-                            <div className='titletext'>{square.title}</div>
-                          </div>
-                          <div className='pricesku'>
-                            <div className='sku'>{square.sku}</div>
-                            <div className='pricing'>
-                              <div className='titletext'>{square.price}</div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className='insetbuttons'>
-                          <div className='sharebutton'>SHARE</div>
-                          {square.product == true && <div className='buybutton'>BUY</div>}
-                          {square.product == true && <div className='bagbutton'>BAG</div>}
-                        </div>
-                      </div>
-                    </div>
+                    {this.renderModularInset(square)}
                 </div>
               )
             }
@@ -140,7 +160,7 @@ class HomePage extends Component {
                   <video autoPlay muted loop preload='auto'>
                     <source src={'../assets/' + square.media} />
                   </video>
-                  PUT MODULAR INSET DIV HERE WHEN FINISHED_ selectors and hover states (CSS)
+                  {this.renderModularInset(square)}
                 </div>
               )
             }
