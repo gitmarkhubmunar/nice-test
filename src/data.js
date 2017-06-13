@@ -950,14 +950,20 @@ const address = {
 	city: 'San Francisco',
 }
 
+const chocolate = {
+	name: 'Almond Joy',
+	ingredients: ['almond', 'milk', 'chocolate']
+}
+
 export default {
 	squares,
 	address,
+	chocolate,
 }
 
 // In React components, you can:
 
-// First import the data
+// First sea coatimport the data
 // import data from './data.js'
 
 // Then use it to filter/do other stuff

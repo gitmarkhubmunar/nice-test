@@ -51,6 +51,8 @@ class HomePage extends Component {
   }
   render () {
     console.log('filter is', this.state.filter)
+    console.log('chocolate is:', data.chocolate)
+
 
     var homeClassName = 'home'
     var gridClassName = 'pastworkgrid'
